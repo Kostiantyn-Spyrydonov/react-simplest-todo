@@ -44,7 +44,7 @@ function ToDoList() {
 
       <h1>To-Do-List</h1>
 
-      <div>
+      <form onSubmit={(e) => { e.preventDefault(); addTask(); }}>
         <input
           type="text"
           placeholder="Enter a task..."
@@ -52,10 +52,10 @@ function ToDoList() {
           onChange={handleInputChange}
         />
         <button
+          type="submit"
           className="add-button"
-          onClick={addTask}
         >Add</button>
-      </div>
+      </form>
 
       <ol>
         {tasks.map((task, index) => 
